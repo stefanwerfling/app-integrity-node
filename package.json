@@ -1,0 +1,50 @@
+{
+  "name": "app-integrity-node",
+  "version": "0.0.1",
+  "description": "Server-side verification for the App Integrity protocol: hardware-backed request signature (sig1) + native factor (sig2) + replay protection. Companion to the flutter_app_integrity plugin.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "PROTOCOL.md", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "keywords": [
+    "app-integrity",
+    "attestation",
+    "request-signing",
+    "play-integrity",
+    "app-attest",
+    "anti-replay",
+    "ecdsa",
+    "security"
+  ],
+  "license": "MIT",
+  "author": "Stefan Werfling",
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "express": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "express": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.0",
+    "express": "^4.21.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
